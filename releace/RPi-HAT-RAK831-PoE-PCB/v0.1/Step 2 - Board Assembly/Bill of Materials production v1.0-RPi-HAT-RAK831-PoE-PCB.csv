@@ -1,0 +1,9 @@
+Comment,Description,Designator,Quantity,Manufacturer 1,Manufacturer Part Number 1,Manufacturer Lifecycle 1,Supplier 1,Supplier Part Number 1,Supplier Unit Price 1,Supplier Subtotal 1
+
+"MRA4007T3G","ON SEMICONDUCTOR - MRA4007T3G - DIODE, STANDARD, 1A, 1KV, SMA","D1, D2","2","ON Semiconductor","MRA4007T3G","Volume Production","Farnell","1459137","0.19438","1.94"
+"OKI-78SR-5","Non-Isolated DC/DC Converters 7.5W 24V 5Vout 1.5A Horizontal Mount","U1","1","Murata","OKI-78SR-5/1.5-W36H-C","Volume Production","Farnell","2766437","4.6","9.19"
+"3A","LITTELFUSE - MINISMDC150F/24-2 - POLYSWITCH, SMD, 1812, 1.5A","F1","1","Littelfuse","MINISMDC150F/24-2","Unknown","Farnell","1345929","0.52826","1.06"
+"BZT52C6V2","DIODES INC. - BZT52C6V2 - DIODE, ZENER, 6.2V, 0.5W, SOD-123","D3","1","Diodes Zetex","BZT52C6V2","Volume Production","Farnell","1902438","0.134","0.67"
+"Header 2X2","Header, 2-Pin, Dual row","P3","1","","","","","","",""
+"Header 4","Header, 4-Pin","P4","1","","","","","","",""
+"Header 12X2","Header, 12-Pin, Dual row","P2","1","","","","","","",""

@@ -1,0 +1,409 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD18\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">09/15/2018</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:47:13 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:08</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc" class="file"><acronym title="C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc">C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">23</td></tr>
+</table>
+</td>
+</table><a name="IDQD1VIKLCWCWREKVK0M1SCWHDRPTOCFGA25N4B3FZVVBF3Y3JNVEJ"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2GNFJ50L5KSCDGNJTSFC0U3NDBZ32LVJMUJXZ0IXAFGC5P12NGRC">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2O4N2YU3NPRCBKIZOGN2MWIOAFKVFD21PHV4HSGHPKIVDW1CH1MD">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGSILU1VKEYNHOGBT15VYMOOD3MX3XW5VD0S2BL4LUGJQFMXVFB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYARMNBH2ZEHWOCKVY2OAENMMQI4BKHC0JNL0HUFMYI43P4LPEJOH">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFMTXTZTYYITNGAY3KZILS4PURLO1RNN2QDBYLALTD4BY3MZW0PDN">Width Constraint (Min=0.254mm) (Max=1.27mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWOGWJEDFQ0B4BXOVJ0A4HNZBLKSON4QYCJCSJGJS1SRMHUZ2EHHG">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKQFNUC4FEOJUHPD4WOYLLOMBDC23GQSRENCN1OGTSTRC2VUF0XKB">Hole Size Constraint (Min=0.025mm) (Max=5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDV1DW1CSUHRC4G3MFLFSVHNSRCDK2B4YTDJ4RHWMBQ1CJBUL5H1SK">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3MZF0B1Q0LNOB2P3SNYKGYQCCMVCV55OUBJYQOI4AQCV155PKNOC">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRCB0BOMQTM2RFUJWSUV2YVCIKGQWMCYAERPV4VCTD0Y2VAA2MPBK">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">17</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM0NDFN5GSQIVM3X0HJ0A2CZHNLFETSN3OJOEZMJGRIQZEUY4CQAM">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOITKS0VJYN3MPIJ0STAVON5VVOJSOXQQK52FHJKKLMY3UOGWWNWO">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFMXXWKCO2FF5IOHESAXSE40EXXCOEPA2ZXGO5OX3WM02CXI5AJ">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCJRGQWINANX2M0WNFNR54PWYAHRDQ1NIRKGFLZJKHBAL0XLDGDJD">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">23</td>
+</tr>
+</table><br><a name="IDRCB0BOMQTM2RFUJWSUV2YVCIKGQWMCYAERPV4VCTD0Y2VAA2MPBK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.115mil|Location2.X=2739.365mil|Location1.Y=2112.249mil|Location2.Y=2123.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.115mil|Location2.X=2739.365mil|Location1.Y=2112.249mil|Location2.Y=2123.499mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Arc (-30.175mm,-9.775mm) on Top Overlay And Pad D3-1(-30.95mm,-10.125mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3949.08mil|Location2.X=3960.33mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3949.08mil|Location2.X=3960.33mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad D1-1(-0.2mm,-16.75mm) on Top Layer And Track (0.8mm,-16.775mm)(1.3mm,-16.775mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3883.135mil|Location2.X=3894.385mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3883.135mil|Location2.X=3894.385mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad D1-1(-0.2mm,-16.75mm) on Top Layer And Track (-1.7mm,-16.775mm)(-1.2mm,-16.775mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3776.836mil|Location2.X=3788.086mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3776.836mil|Location2.X=3788.086mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad D2-1(-4.575mm,-16.75mm) on Top Layer And Track (-3.575mm,-16.775mm)(-3.075mm,-16.775mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3710.891mil|Location2.X=3722.141mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3710.891mil|Location2.X=3722.141mil|Location1.Y=1836.659mil|Location2.Y=1847.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.125mm &lt; 0.254mm) Between Pad D2-1(-4.575mm,-16.75mm) on Top Layer And Track (-6.075mm,-16.775mm)(-5.575mm,-16.775mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.125mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.607mil|Location2.X=2739.857mil|Location1.Y=2100.438mil|Location2.Y=2111.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.607mil|Location2.X=2739.857mil|Location1.Y=2100.438mil|Location2.Y=2111.688mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.225mm &lt; 0.254mm) Between Pad D3-1(-30.95mm,-10.125mm) on Top Layer And Track (-30.15mm,-10.075mm)(-29.95mm,-10.075mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2682.347mil|Location2.X=2693.597mil|Location1.Y=2100.438mil|Location2.Y=2111.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2682.347mil|Location2.X=2693.597mil|Location1.Y=2100.438mil|Location2.Y=2111.688mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.225mm &lt; 0.254mm) Between Pad D3-1(-30.95mm,-10.125mm) on Top Layer And Track (-31.95mm,-10.075mm)(-31.75mm,-10.075mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.607mil|Location2.X=2739.857mil|Location1.Y=1958.706mil|Location2.Y=1969.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2728.607mil|Location2.X=2739.857mil|Location1.Y=1958.706mil|Location2.Y=1969.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.225mm &lt; 0.254mm) Between Pad D3-2(-30.95mm,-13.625mm) on Top Layer And Track (-30.15mm,-13.675mm)(-29.95mm,-13.675mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2682.347mil|Location2.X=2693.597mil|Location1.Y=1958.706mil|Location2.Y=1969.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2682.347mil|Location2.X=2693.597mil|Location1.Y=1958.706mil|Location2.Y=1969.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.225mm &lt; 0.254mm) Between Pad D3-2(-30.95mm,-13.625mm) on Top Layer And Track (-31.95mm,-13.675mm)(-31.75mm,-13.675mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.048mil|Location2.X=3087.298mil|Location1.Y=2030.556mil|Location2.Y=2041.806mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.048mil|Location2.X=3087.298mil|Location1.Y=2030.556mil|Location2.Y=2041.806mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.225mm &lt; 0.254mm) Between Pad F1-1(-22.425mm,-10.125mm) on Top Layer And Track (-21.325mm,-12.125mm)(-21.325mm,-8.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.619mil|Location2.X=3082.869mil|Location1.Y=2027.111mil|Location2.Y=2038.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3071.619mil|Location2.X=3082.869mil|Location1.Y=2027.111mil|Location2.Y=2038.361mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad F1-1(-22.425mm,-10.125mm) on Top Layer And Track (-27.525mm,-12.125mm)(-21.325mm,-12.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3010.595mil|Location2.X=3021.845mil|Location1.Y=2169.828mil|Location2.Y=2181.078mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3010.595mil|Location2.X=3021.845mil|Location1.Y=2169.828mil|Location2.Y=2181.078mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad F1-1(-22.425mm,-10.125mm) on Top Layer And Track (-27.525mm,-8.125mm)(-21.325mm,-8.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.139mil|Location2.X=2925.389mil|Location1.Y=2027.111mil|Location2.Y=2038.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.139mil|Location2.X=2925.389mil|Location1.Y=2027.111mil|Location2.Y=2038.361mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad F1-2(-26.425mm,-10.125mm) on Top Layer And Track (-27.525mm,-12.125mm)(-21.325mm,-12.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2848.686mil|Location2.X=2859.936mil|Location1.Y=2166.383mil|Location2.Y=2177.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2848.686mil|Location2.X=2859.936mil|Location1.Y=2166.383mil|Location2.Y=2177.633mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.225mm &lt; 0.254mm) Between Pad F1-2(-26.425mm,-10.125mm) on Top Layer And Track (-27.525mm,-12.125mm)(-27.525mm,-8.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.225mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2853.115mil|Location2.X=2864.365mil|Location1.Y=2169.828mil|Location2.Y=2181.078mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2853.115mil|Location2.X=2864.365mil|Location1.Y=2169.828mil|Location2.Y=2181.078mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad F1-2(-26.425mm,-10.125mm) on Top Layer And Track (-27.525mm,-8.125mm)(-21.325mm,-8.125mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1859.285mil|Location2.X=1870.535mil|Location1.Y=784.445mil|Location2.Y=795.695mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1859.285mil|Location2.X=1870.535mil|Location1.Y=784.445mil|Location2.Y=795.695mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.169mm &lt; 0.254mm) Between Pad Free-0(-51.725mm,-46.5mm) on Multi-Layer And Text "23" (-51.477mm,-41.199mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.169mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1859.285mil|Location2.X=1870.535mil|Location1.Y=2391.13mil|Location2.Y=2402.38mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1859.285mil|Location2.X=1870.535mil|Location1.Y=2391.13mil|Location2.Y=2402.38mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.189mm &lt; 0.254mm) Between Pad Free-0(-51.725mm,-5.7mm) on Multi-Layer And Track (-54.388mm,-2.497mm)(-3.588mm,-2.497mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.189mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDM0NDFN5GSQIVM3X0HJ0A2CZHNLFETSN3OJOEZMJGRIQZEUY4CQAM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1797.328mil|Location2.X=1808.578mil|Location1.Y=2093.391mil|Location2.Y=2104.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1797.328mil|Location2.X=1808.578mil|Location1.Y=2093.391mil|Location2.Y=2104.641mil|Absolute=True">Silk To Silk Clearance Constraint: (0.222mm &lt; 0.254mm) Between Text "2" (-54.017mm,-9.195mm) on Bottom Overlay And Track (-55.795mm,-10.465mm)(-50.715mm,-10.465mm) on Bottom Overlay Silk Text to Silk Clearance [0.222mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1897.328mil|Location2.X=1908.578mil|Location1.Y=880.115mil|Location2.Y=891.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1897.328mil|Location2.X=1908.578mil|Location1.Y=880.115mil|Location2.Y=891.365mil|Absolute=True">Silk To Silk Clearance Constraint: (0.052mm &lt; 0.254mm) Between Text "23" (-51.477mm,-41.199mm) on Bottom Overlay And Track (-55.795mm,-40.945mm)(-50.715mm,-40.945mm) on Bottom Overlay Silk Text to Silk Clearance [0.052mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1797.328mil|Location2.X=1808.578mil|Location1.Y=880.115mil|Location2.Y=891.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1797.328mil|Location2.X=1808.578mil|Location1.Y=880.115mil|Location2.Y=891.365mil|Absolute=True">Silk To Silk Clearance Constraint: (0.052mm &lt; 0.254mm) Between Text "24" (-54.017mm,-41.199mm) on Bottom Overlay And Track (-55.795mm,-40.945mm)(-50.715mm,-40.945mm) on Bottom Overlay Silk Text to Silk Clearance [0.052mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3170.855mil|Location2.X=3182.105mil|Location1.Y=2191.936mil|Location2.Y=2203.186mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3170.855mil|Location2.X=3182.105mil|Location1.Y=2191.936mil|Location2.Y=2203.186mil|Absolute=True">Silk To Silk Clearance Constraint: (0.25mm &lt; 0.254mm) Between Text "U1" (-17.075mm,-7.5mm) on Bottom Overlay And Track (-19.15mm,-24.975mm)(-19.15mm,-7.975mm) on Bottom Overlay Silk Text to Silk Clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3241.74mil|Location2.X=3252.99mil|Location1.Y=2191.934mil|Location2.Y=2203.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3241.74mil|Location2.X=3252.99mil|Location1.Y=2191.934mil|Location2.Y=2203.184mil|Absolute=True">Silk To Silk Clearance Constraint: (0.248mm &lt; 0.254mm) Between Text "U1" (-17.075mm,-7.5mm) on Bottom Overlay And Track (-19.15mm,-7.975mm)(-8.05mm,-7.975mm) on Bottom Overlay Silk Text to Silk Clearance [0.248mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDFMXXWKCO2FF5IOHESAXSE40EXXCOEPA2ZXGO5OX3WM02CXI5AJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1502.948mil|Location2.X=1510.614mil|Location1.Y=1516.213mil|Location2.Y=1523.88mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\RPi-HAT-RAK831-PoE-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1502.948mil|Location2.X=1510.614mil|Location1.Y=1516.213mil|Location2.Y=1523.88mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.254mm) Between Board Edge And Text "VCC" (-43.225mm,-47.25mm) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

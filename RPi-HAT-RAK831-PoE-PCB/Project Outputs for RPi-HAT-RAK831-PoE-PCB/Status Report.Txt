@@ -1,0 +1,15 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 4:50:56 PM On 11/02/2019
+
+Output: Bill of Materials production v1.0
+Type  : BOM
+From  : Variant [[No Variations]] of Project [RPi-HAT-RAK831-PoE-PCB.PrjPcb]
+   Generated File[Bill of Materials production v1.0-RPi-HAT-RAK831-PoE-PCB.csv]
+   Generated File[Bill of Materials production v1.0-RPi-HAT-RAK831-PoE-PCB.csv]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 4:50:56 PM On 11/02/2019

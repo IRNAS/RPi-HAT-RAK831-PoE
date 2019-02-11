@@ -1,0 +1,21 @@
+Altium Designer Pick and Place Locations
+C:\Users\vojislav\Documents\RPi-HAT-RAK831-PoE\RPi-HAT-RAK831-PoE-PCB\Project Outputs for RPi-HAT-RAK831-PoE-PCB\Pick Place\Pick Place for RPi-HAT-RAK831-PoE-PCB.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       11/02/19
+Time:       16:39
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+"Designator","Footprint","Center-X(mm)","Center-Y(mm)","Ref-X(mm)","Ref-Y(mm)","Pad-X(mm)","Pad-Y(mm)","Layer","Rotation","Comment"
+"U1","DC-DC","-13.6000","-9.4800","-13.5500","-23.9750","-11.0600","-9.4750","BottomLayer","0","OKI-78SR-5"
+"P2","HDR2X12","-53.2550","-25.7050","-51.9850","-11.7350","-51.9850","-11.7350","BottomLayer","270","Header 12X2"
+"P4","HDR1X4","-40.2950","-48.9750","-44.1050","-48.9750","-44.1050","-48.9750","TopLayer","360","Header 4"
+"P3","HDR2X2","-0.0050","-6.1250","-1.2750","-4.8550","-1.2750","-4.8550","TopLayer","270","Header 2X2"
+"F1","Chip2PinSM127P600-8N","-24.4250","-10.1250","-24.4250","-10.1250","-22.4250","-10.1250","TopLayer","180","3A"
+"D3","SOD123","-30.9500","-11.8750","-30.9500","-11.8750","-30.9500","-10.1250","TopLayer","270","BZT52C6V2"
+"D2","DIOM4326X24N_1","-4.5750","-15.1750","-4.5750","-15.1750","-4.5750","-16.7500","TopLayer","90","MRA4007T3G"
+"D1","DIOM4326X24N_1","-0.2000","-15.1750","-0.2000","-15.1750","-0.2000","-16.7500","TopLayer","90","MRA4007T3G"

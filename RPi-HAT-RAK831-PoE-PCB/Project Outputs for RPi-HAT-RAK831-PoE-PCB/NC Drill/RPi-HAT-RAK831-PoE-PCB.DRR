@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: RPi-HAT-RAK831-PoE-PCB.PcbDoc   09/15/2018  12:51:11 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : RPi-HAT-RAK831-PoE-PCB.TXT
+EIA File   : RPi-HAT-RAK831-PoE-PCB.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             248       PTH        0.00inch (0.00mm)
+T2      28mil (0.711mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T3      35mil (0.9mm)                                             Round             72        PTH        0.00inch (0.00mm)
+T4      39mil (1mm)                                               Round             3         PTH        0.00inch (0.00mm)
+T5      122mil (3.1mm)                                            Round             6         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              330
+
+Total Processing Time (hh:mm:ss) : 00:00:05

@@ -1,0 +1,195 @@
+*************************************************************
+FileName = RPi-HAT-RAK831-PoE-PCB.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Overlay
+      File : RPi-HAT-RAK831-PoE-PCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D16
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : RPi-HAT-RAK831-PoE-PCB.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : RPi-HAT-RAK831-PoE-PCB.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : RPi-HAT-RAK831-PoE-PCB.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D11
+    D14
+    D16
+    D40
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : RPi-HAT-RAK831-PoE-PCB.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : RPi-HAT-RAK831-PoE-PCB.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : RPi-HAT-RAK831-PoE-PCB.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 29
+      File : RPi-HAT-RAK831-PoE-PCB.GM29
+
+    Adding Layer      : Mechanical 29
+
+
+Used DCodes :
+    D11
+    D14
+    D41
+    D42
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : RPi-HAT-RAK831-PoE-PCB.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : RPi-HAT-RAK831-PoE-PCB.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : RPi-HAT-RAK831-PoE-PCB.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+*************************************************************
+
