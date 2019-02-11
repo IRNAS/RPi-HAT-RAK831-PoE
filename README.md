@@ -3,7 +3,7 @@
 # RPi-HAT-RAK831-PoE
 Raspberry Pi 3 Model B+ HAT for LoraWAN gateway with RAK831 and PoE (Power over Ethernet)
 
-This PCB is can be used to connect RAK831 LoraWAN board to the Raspberry Pi more easily. All nessesery files to produce this board and [schematic in PDF format](https://github.com/IRNAS/RPi-HAT-RAK831-PoE/blob/master/releace/RPi-HAT-RAK831-PoE-PCB/v0.1/Step%205%20-%20Schematic/Schematic%20RPi-HAT-RAK831-PoE-PCB.PDF) can be found in the [release folder v0.1](https://github.com/IRNAS/RPi-HAT-RAK831-PoE/tree/master/releace/RPi-HAT-RAK831-PoE-PCB/v0.1).
+This PCB is can be used to connect the RAK831 LoraWAN board to the Raspberry Pi more easily. All necessary files to produce this board and [schematic in PDF format](https://github.com/IRNAS/RPi-HAT-RAK831-PoE/blob/master/releace/RPi-HAT-RAK831-PoE-PCB/v0.1/Step%205%20-%20Schematic/Schematic%20RPi-HAT-RAK831-PoE-PCB.PDF) can be found in the [release folder v0.1](https://github.com/IRNAS/RPi-HAT-RAK831-PoE/tree/master/releace/RPi-HAT-RAK831-PoE-PCB/v0.1).
 ![image_pcb](https://github.com/IRNAS/RPi-HAT-RAK831-PoE/blob/master/images/3d%20Capture.PNG)
 
 ---
