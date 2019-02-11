@@ -1,3 +1,5 @@
+![logo_irnas](https://github.com/IRNAS/RPi-HAT-RAK831-PoE/blob/master/images/irnas_logo.png)
+
 # RPi-HAT-RAK831-PoE
 Raspberry Pi 3 Model B+ HAT for LoraWAN gateway with RAK831 and PoE (Power over Ethernet)
 
